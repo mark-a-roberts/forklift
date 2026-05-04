@@ -5,10 +5,10 @@ import sys
 from Grid.Grid import Grid
 from Grid.Row import Row
 
-
-
 def main():
-
+    """
+    Reads a grid from stdin and prints the accessible stacks
+    """
     grid = Grid()
     # read into grid
     for line in sys.stdin:
@@ -21,9 +21,12 @@ def main():
 
     # calculate removals
     result = grid.process()
+
+    # output the revised grid...
     for row in result.rows:
          print(row.string())
 
+    # ...and the number of removed stacks
     print("Removed stacks:" + str(result.removed()))
 
 main()

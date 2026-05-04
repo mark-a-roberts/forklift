@@ -1,22 +1,34 @@
 from Grid.Row import Row
-import sys
 
 class Grid:
 
     def __init__(self):
         self.rows = []
 
-    def add_row(self, row):
+    def add_row(self, row:Row):
+        """
+        Add another row to the grid
+        :param row:
+        :return:
+        """
         self.rows.append(row)
         return self
 
     def removed(self):
-        count = 0
+        """
+        count the number of stacks that can be removed
+        :return:
+        """
+        count: int = 0
         for row in self.rows:
             count += row.removed()
         return count
 
     def process(self):
+        """
+        process the grid to determine accessible stacks
+        :return: new Grid with accessible stacks
+        """
         result = Grid()
         for i, row in enumerate(self.rows):
             new_row = Row()

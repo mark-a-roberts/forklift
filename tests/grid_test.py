@@ -2,6 +2,11 @@ from Grid.Grid import Grid
 from Grid.Row import Row
 
 def test_grid():
+    """
+    Unit test for a full grid with uneven rows
+    The test builds a grid
+    :return:
+    """
     row1 = Row([1, 0, 1, 1])
     row2 = Row([1, 0, 1, 1 ])
     row3 = Row([1, 0, 1, 1, 1])
